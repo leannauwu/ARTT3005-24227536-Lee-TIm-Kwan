@@ -166,7 +166,9 @@
 		}
 
 		.record-audio,
-		.record-text {
+		.record-text,
+		.record-video,
+		.record-pdf {
 			width: 100%;
 			min-height: 300px;
 			flex: 1;
@@ -186,6 +188,20 @@
 			border-radius: 4px;
 			font: 0.8rem/1.5 "Courier New", Courier, monospace;
 			white-space: pre-wrap;
+		}
+
+		.record-video {
+			display: block;
+			background: #000;
+			border: 1px solid #aebbb4;
+			border-radius: 4px;
+		}
+
+		.record-pdf {
+			display: block;
+			border: 1px solid #aebbb4;
+			border-radius: 4px;
+			background: #fff;
 		}
 
 		.load-error {
@@ -235,7 +251,7 @@
 		const fetchFirstAvailable = async (paths) => {
 			for (const url of paths) {
 				try {
-					const response = await fetch(url);
+					const response = await fetch(`${url}?v=${Date.now()}`, { cache: 'no-store' });
 					if (response.ok) {
 						return response;
 					}
@@ -267,7 +283,7 @@
 				try {
 					const response = await fetchFirstAvailable(mediaCandidates);
 					if (response.ok) {
-						image.src = response.url;
+						image.src = `${response.url.split('?')[0]}?v=${Date.now()}`;
 					}
 				} catch (error) {
 					image.src = source;
@@ -290,7 +306,7 @@
 				try {
 					const response = await fetchFirstAvailable(mediaCandidates);
 					if (response.ok) {
-						audio.src = response.url;
+						audio.src = `${response.url.split('?')[0]}?v=${Date.now()}`;
 					}
 				} catch (error) {
 					audio.src = source;
@@ -304,6 +320,46 @@
 					}
 				}, { once: true });
 				return audio;
+			}
+
+			if (extension === 'mp4') {
+				const video = document.createElement('video');
+				video.className = 'record-video';
+				video.controls = true;
+				video.muted = false;
+				video.preload = 'metadata';
+				try {
+					const response = await fetchFirstAvailable(mediaCandidates);
+					if (response.ok) {
+						video.src = `${response.url.split('?')[0]}?v=${Date.now()}`;
+					}
+				} catch (error) {
+					video.src = source;
+				}
+				video.addEventListener('error', () => {
+					for (const candidate of fallbackCandidates) {
+						if (candidate !== source) {
+							video.src = candidate;
+							return;
+						}
+					}
+				}, { once: true });
+				return video;
+			}
+
+			if (extension === 'pdf') {
+				const frame = document.createElement('iframe');
+				frame.className = 'record-pdf';
+				frame.title = record.title;
+				try {
+					const response = await fetchFirstAvailable(mediaCandidates);
+					if (response.ok) {
+						frame.src = `${response.url.split('?')[0]}?v=${Date.now()}`;
+					}
+				} catch (error) {
+					frame.src = source;
+				}
+				return frame;
 			}
 
 			if (extension === 'txt') {

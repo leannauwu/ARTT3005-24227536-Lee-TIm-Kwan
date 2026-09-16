@@ -1,202 +1,202 @@
 [
-  {
-    "catalog_id": "REC-001",
-    "title": "The cactus in front of someone else's house",
-    "date": "2026-09-15",
-    "place": "her kitchen, Sham Shui Po",
-    "recorder": "Leanna",
-    "image": "REC-001.jpg",
-    "not_captured": "The texture, the sound of raindrops falling on it, and the smell",
-    "certainty": 4
-  },
-  {
-    "catalog_id": "REC-002",
-    "title": "The bushes behind the road sign at the street entrance",
-    "date": "2026-09-15",
-    "place": "Pat Heung",
-    "recorder": "Leanna",
-    "image": "REC-002.jpg",
-    "not_captured": "The sound of wind blowing through leaves and raindrops falling on it, and the smell",
-    "certainty": 4
-  },
-  {
-    "catalog_id": "REC-003",
-    "title": "lavender fields",
-    "date": "2026-07-06",
-    "place": "Tokyo, Japan",
-    "recorder": "Mom",
-    "image": "REC-003.jpg",
-    "not_captured": "The smell, the sound of bees buzzing around the flowers, and the sound of wind blowing through the fields",
-    "certainty": 3
-  },
-  {
-    "catalog_id": "REC-004",
-    "title": "Dissapered tree accross from my house",
-    "date": "2026-09-15",
-    "place": "Win Gain Garden, Pat Heung",
-    "recorder": "Leanna",
-    "image": "REC-004.jpg",
-    "not_captured": "The tree and its size, the sound of wind blowing through the leaves, the sound of birds chirping",
-    "certainty": 2
-  },
-  {
-    "catalog_id": "REC-005",
-    "title": "My neighbor's tree",
-    "date": "2026-09-13",
-    "place": "I Life, Pat Heung",
-    "recorder": "Leanna",
-    "image": "REC-005.jpg",
-    "not_captured": "The sound of wind blowing through leaves and raindrops falling on it, and the insects that live in it",
-    "certainty": 4
-  },
-  {
-    "catalog_id": "REC-006",
-    "title": "The paddy",
-    "date": "unknown",
-    "place": "unknown",
-    "recorder": "Someone on the internet",
-    "image": "REC-006.png",
-    "not_captured": "The feel, the sound of wind blowing through the paddy, and the animals that live in it",
-    "certainty": 1
-  },
-    {
-        "catalog_id": "REC-007",
-        "title": "Wind blowing through leaves",
-        "date": "unknown",
-        "place": "unknown",
-        "recorder": "Pixabay user \"SoundsForYou\"",
-        "image": "REC-007.mp3",
-        "not_captured": "Types of plants, the smell of leaves, the colour of the leaves, the size of the plants, and the place where the plants are located",
-        "certainty": 1
-    },
-    {
-        "catalog_id": "REC-008",
-        "title": "Dishes on the plate",
-        "date": "2025-08-14",
-        "place": "ShangHai, China",
-        "recorder": "Leanna",
-        "image": "REC-008.png",
-        "not_captured": "The taste, the sound when chewing it, the smell, and the original form",
-        "certainty": 3
-    },
-    {
-        "catalog_id": "REC-009",
-        "title": "The tree that now dissapeared",
-        "date": "2019-10-25",
-        "place": "Win Gain Garden,Pat Heung",
-        "recorder": "Leanna",
-        "image": "REC-009.png",
-        "not_captured": "the sound of wind blowing through the leaves, the sound of birds chirping, and the temperature difference between under the tree and the surrounding area",
-        "certainty": 4
-    },
-    {
-        "catalog_id": "REC-010",
-        "title": "Flowers in the garden",
-        "date": "2021-11-28",
-        "place": "My home",
-        "recorder": "Leanna",
-        "image": "REC-010.png",
-        "not_captured": "The texture, the smell, and the size of the flowers",
-        "certainty": 4
-    },
-    {
-        "catalog_id": "REC-011",
-        "title": "Moss on the stone",
-        "date": "2021-10-08",
-        "place": "Hong Kong",
-        "recorder": "Leanna",
-        "image": "REC-011.png",
-        "not_captured": "The feel, and the smell",
-        "certainty": 2
-    },
-    {
-        "catalog_id": "REC-012",
-        "title": "school field trip",
-        "date": "2021-11-03",
-        "place": "Hong Kong",
-        "recorder": "Leanna",
-        "image": "REC-012.png",
-        "not_captured": "The temperature difference, the sound of wind blowing over it, and the people around",
-        "certainty": 4
-    },
-    {
-        "catalog_id": "REC-013",
-        "title": "Tree in front of the church",
-        "date": "2022-08-22",
-        "place": "Yim Tin Tsai, Sai Kung",
-        "recorder": "Leanna",
-        "image": "REC-013.png",
-        "not_captured": "The sound of wind blowing through leaves, the heat and the smell",
-        "certainty": 5
-    },
-    {
-        "catalog_id": "REC-014",
-        "title": "Salad recipe",
-        "date": "2026-09-15",
-        "place": "Internet",
-        "recorder": "AI",
-        "image": "REC-014.txt",
-        "not_captured": "The taste, the smell, the look of the vegetables",
-        "certainty": 2
-    },
-    {
-        "catalog_id": "REC-015",
-        "title": "The Trees",
-        "date": "1967-06-02",
-        "place": "unknown",
-        "recorder": "Philip Larkin",
-        "image": "REC-015.txt",
-        "not_captured": "The tone, the look, smell and the sound of the trees",
-        "certainty": 1
-    },
-    {
-        "catalog_id": "REC-016",
-        "title": "Watering",
-        "date": "unknown",
-        "place": "Somewhere",
-        "recorder": "pixabay user \"freesound_community\"",
-        "image": "REC-016.mp3",
-        "not_captured": "The type of plants that are being watered, and the smell of the plants, the place where the plants are located, and the temperature of the water",
-        "certainty": 1
-    },
-    {
-        "catalog_id": "REC-017",
-        "title": "The bushes behind the road sign at the street entrance",
-        "date": "unknown",
-        "place": "Asia",
-        "recorder": "Jirati Juntranimit",
-        "image": "REC-017.jpg",
-        "not_captured": "The taste, the texture, the sound of wind blowing over them, and the smell",
-        "certainty": 3
-    },
-    {
-        "catalog_id": "REC-018",
-        "title": "Baby plants",
-        "date": "unknown",
-        "place": "unknown",
-        "recorder": "unknown",
-        "image": "REC-018.jpg",
-        "not_captured": "The type of plants, the sound of water dropping on it, and the smell of dirt",
-        "certainty": 1
-    },
-    {
-        "catalog_id": "REC-019",
-        "title": "Birds singing",
-        "date": "unknown",
-        "place": "unknown",
-        "recorder": "pixabay user \"Mind_out_of_office\"",
-        "image": "REC-019.mp3",
-        "not_captured": "The time, the type of tree, the amount of trees and birds, the weather and the smell",
-        "certainty": 2
-    },
-    {
-        "catalog_id": "REC-020",
-        "title": "A vast wilderness",
-        "date": "2022-08-22",
-        "place": "Yim Tin Tsai, Sai Kung",
-        "recorder": "Leanna",
-        "image": "REC-020.jpg",
-        "not_captured": "The weather, the sound of wind blowing through grass, the numbers of plants, the animal lives inside the bush and the smell",
-        "certainty": 3
-    }
+{
+  "catalog_id": "REC-001",
+  "title": "Liu Zongyuan - Liuzhou February Banyan Leaves Fallen",
+  "date": "around 815 CE",
+  "place": "Liuzhou",
+  "recorder": "Liu Zongyuan",
+  "image": "1.txt",
+  "not_captured": "No smell; No humidity or moisture; No tactile texture; No detailed visual of roots or trunk; No temperature",
+  "certainty": 2
+},
+{
+  "catalog_id": "REC-002",
+  "title": "Yang Wanli - Banyan Tree",
+  "date": "around 12th century",
+  "place": "Southern Song (unknown exact location)",
+  "recorder": "Yang Wanli",
+  "image": "2.txt",
+  "not_captured": "No sound; No smell; No humidity; No colour details; No tactile description",
+  "certainty": 2
+},
+{
+  "catalog_id": "REC-003",
+  "title": "Huang Daozhou - Ode to the Banyan",
+  "date": "around 1634",
+  "place": "Rongtan, Ziyang Mountain, Zhangzhou",
+  "recorder": "Huang Daozhou",
+  "image": "3.txt",
+  "not_captured": "No actual recorded sound; No modern sensory data (humidity, temperature); No photographic appearance; No smell measurement",
+  "certainty": 2
+},
+{
+  "catalog_id": "REC-004",
+  "title": "Zhao Yi - Song of the Ancient Banyan on Duxiu Peak",
+  "date": "18th century",
+  "place": "Duxiu Peak, Guilin, Guangxi",
+  "recorder": "Zhao Yi",
+  "image": "4.txt",
+  "not_captured": "No smell; No sound of wind or birds; No humidity; No tactile feel of bark; No colour beyond general age",
+  "certainty": 2
+},
+{
+  "catalog_id": "REC-005",
+  "title": "Wu Degong - Banyan Tree",
+  "date": "late Qing to early Republic",
+  "place": "Taiwan",
+  "recorder": "Wu Degong",
+  "image": "5.txt",
+  "not_captured": "No smell; No humidity; No detailed sound; No tactile texture; No microscopic view",
+  "certainty": 2
+},
+{
+  "catalog_id": "REC-006",
+  "title": "Rabindranath Tagore - The Banyan Tree",
+  "date": "1913",
+  "place": "India",
+  "recorder": "Rabindranath Tagore",
+  "image": "6.txt",
+  "not_captured": "No real recorded sound; No smell; No humidity; No tactile sensation; No photographic record",
+  "certainty": 2
+},
+{
+  "catalog_id": "REC-007",
+  "title": "Banyan Tree",
+  "date": "1928",
+  "place": "Taiwan",
+  "recorder": "Hiroshi Ogata",
+  "image": "7.jpg",
+  "not_captured": "No size measurement; No animals that live in it; No smell; No colour details",
+  "certainty": 2
+},
+{
+  "catalog_id": "REC-008",
+  "title": "Haldhar Nag - Old Banyan Tree (Dhodo Bargachh)",
+  "date": "1990",
+  "place": "Ghens, India",
+  "recorder": "Haldhar Nag",
+  "image": "8.txt",
+  "not_captured": "No smell; No humidity; No tactile feel; No visual photo; No recorded ambient sound",
+  "certainty": 2
+},
+{
+  "catalog_id": "REC-009",
+  "title": "Study on Aerial Root of Ficus microcarpa - Root Cap Structure",
+  "date": "1991",
+  "place": "Taiwan",
+  "recorder": "Ling-Long Kuo-Huang",
+  "image": "9.jpg",
+  "not_captured": "No smell; No ambient sound; No humidity of living tree; No overall tree appearance; No temperature data",
+  "certainty": 2
+},
+{
+  "catalog_id": "REC-010",
+  "title": "Guan Shanyue - Native Sentiment (painting)",
+  "date": "1999",
+  "place": "Napeng Village, Buchang Town, Yangjiang, Guangdong",
+  "recorder": "Guan Shanyue",
+  "image": "10.jpg",
+  "not_captured": "No smell; No sound; No humidity; No tactile texture; No real-time appearance (only painted)",
+  "certainty": 2
+},
+{
+  "catalog_id": "REC-011",
+  "title": "Study on the Morphology of Pyrene of Ficus in Taiwan",
+  "date": "2005",
+  "place": "Taiwan",
+  "recorder": "Juei-Chun Chuang, Hsy-Yu Tzeng et al.",
+  "image": "11.pdf",
+  "not_captured": "No smell; No ambient sound; No humidity of tree; No living-tree appearance; No temperature",
+  "certainty": 2
+},
+{
+  "catalog_id": "REC-012",
+  "title": "Anping Tree House photographs",
+  "date": "from around 2010",
+  "place": "Anping, Tainan",
+  "recorder": "multiple (e.g. Pbdragonwang et al.)",
+  "image": "12.jpg",
+  "not_captured": "No smell; No sound; No humidity measurement; No tactile description; No temperature",
+  "certainty": 2
+},
+{
+  "catalog_id": "REC-013",
+  "title": "Yu Tian - Under the Banyan Tree (official MV)",
+  "date": "2012",
+  "place": "Taiwan (song setting)",
+  "recorder": "Yu Tian",
+  "image": "13.mp4",
+  "not_captured": "No real tree smell; No humidity; No visual appearance of actual tree; No tactile feel; No scientific description",
+  "certainty": 2
+},
+{
+  "catalog_id": "REC-014",
+  "title": "Ruskin Bond - Banyan Tree",
+  "date": "2018",
+  "place": "India",
+  "recorder": "Ruskin Bond",
+  "image": "14.txt",
+  "not_captured": "No smell; No humidity; No recorded sound; No tactile bark; No photographic record",
+  "certainty": 2
+},
+{
+  "catalog_id": "REC-015",
+  "title": "4K Hawaiian Forest - Lahaina Banyan Tree bird sounds",
+  "date": "16 July 2019",
+  "place": "Lahaina Banyan Tree Park, Maui, Hawaii",
+  "recorder": "4K Relaxation Channel",
+  "image": "15.mp3",
+  "not_captured": "No smell; No humidity data; No tactile description; No microscopic detail; No temperature reading",
+  "certainty": 2
+},
+{
+  "catalog_id": "REC-016",
+  "title": "Donggang Banyan Park photograph",
+  "date": "2 February 2023",
+  "place": "Yilan",
+  "recorder": "Tourism Administration, Northeast and Yilan Coast National Scenic Area",
+  "image": "16.jpg",
+  "not_captured": "No smell; No sound; No humidity; No tactile feel; No temperature",
+  "certainty": 2
+},
+{
+  "catalog_id": "REC-017",
+  "title": "Feng Chia University old banyan tree collapse news",
+  "date": "13-14 June 2025",
+  "place": "Feng Chia University, Taichung",
+  "recorder": "Zhang Ruizhen",
+  "image": "17.jpg",
+  "not_captured": "No smell; No prior ambient sound; No humidity of soil; No tactile bark before fall; No microscopic pathogen image",
+  "certainty": 2
+},
+{
+  "catalog_id": "REC-018",
+  "title": "Guan Shanyue former residence double banyan report",
+  "date": "11 September 2026",
+  "place": "Napeng Village, Buchang Town, Yangjiang, Guangdong",
+  "recorder": "news report",
+  "image": "18.txt",
+  "not_captured": "No smell; No ambient sound; No humidity measurement; No tactile description; No temperature",
+  "certainty": 2
+},
+{
+  "catalog_id": "REC-019",
+  "title": "Yunshuiyao ancient banyan uprighted news",
+  "date": "9-10 September 2026",
+  "place": "Yunshuiyao Scenic Area, Nanjing, Zhangzhou, Fujian",
+  "recorder": "Wu Jianfeng, Guo Qi",
+  "image": "19.jpg",
+  "not_captured": "No smell; No prior wind or bird sound; No humidity of soil/roots; No tactile root texture; No microscopic view",
+  "certainty": 2
+},
+{
+  "catalog_id": "REC-020",
+  "title": "Hong Kong moth infestation of banyan trees news",
+  "date": "14 September 2026",
+  "place": "multiple districts in Hong Kong",
+  "recorder": "Sing Tao Daily",
+  "image": "20.txt",
+  "not_captured": "No smell of damaged leaves; No moth or tree sound; No humidity data; No tactile leaf/bark feel; No temperature",
+  "certainty": 2
+}
 ]
