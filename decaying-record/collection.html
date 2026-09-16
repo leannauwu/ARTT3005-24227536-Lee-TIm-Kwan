@@ -1,0 +1,388 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Collection</title>
+	<style>
+		:root {
+			color: #263238;
+			background: #eef1ed;
+			font-family: Georgia, "Times New Roman", serif;
+		}
+
+		* {
+			box-sizing: border-box;
+		}
+
+		body {
+			min-height: 100vh;
+			margin: 0;
+			padding: 24px;
+		}
+
+		.collection {
+			display: grid;
+			width: min(1440px, 100%);
+			margin: 0 auto;
+			grid-template-columns: repeat(auto-fit, minmax(320px, 460px));
+			gap: 32px;
+			justify-content: center;
+		}
+
+		.card-scene {
+			width: min(460px, 100%);
+			height: 520px;
+			perspective: 1200px;
+		}
+
+		.card {
+			position: relative;
+			width: 100%;
+			height: 100%;
+			transform-style: preserve-3d;
+			transition: transform 700ms ease;
+		}
+
+		.card.is-flipped {
+			transform: rotateY(180deg);
+		}
+
+		.card-face {
+			position: absolute;
+			inset: 0;
+			padding: 24px;
+			backface-visibility: hidden;
+			background: #fffdf8;
+			border: 1px solid #d8ddd6;
+			border-radius: 8px;
+			box-shadow: 0 14px 32px rgb(38 50 56 / 10%);
+		}
+
+		.card-front {
+			display: flex;
+			flex-direction: column;
+		}
+
+		.card-back {
+			transform: rotateY(180deg);
+			font-family: "Courier New", Courier, monospace;
+		}
+
+		.specimen-label {
+			height: 100%;
+			padding: 20px;
+			border: 1px solid #455a54;
+		}
+
+		.catalog-number {
+			margin: 0 0 34px;
+			color: #455a54;
+			font-size: 0.78rem;
+			letter-spacing: 0.08em;
+		}
+
+		.specimen-fields {
+			margin: 0;
+		}
+
+		.specimen-fields dt {
+			margin-top: 22px;
+			color: #455a54;
+			font-size: 0.78rem;
+			font-weight: 700;
+			letter-spacing: 0.05em;
+			text-transform: uppercase;
+		}
+
+		.specimen-fields dt:first-child {
+			margin-top: 0;
+		}
+
+		.specimen-fields dd {
+			margin: 6px 0 0;
+			color: #263238;
+			font-size: 0.86rem;
+			filter: blur(0);
+			letter-spacing: 0;
+			opacity: 1;
+			transition: filter 15s ease, opacity 15s ease, letter-spacing 15s ease;
+		}
+
+		.card.is-decaying .specimen-fields dd {
+			filter: blur(6px);
+			letter-spacing: 0.3em;
+			opacity: 0.04;
+		}
+
+		.card.is-decaying .specimen-fields dd:last-child {
+			transition-delay: 12s;
+			transition-duration: 3s;
+		}
+
+		.image-placeholder {
+			display: grid;
+			min-height: 300px;
+			flex: 1;
+			place-items: center;
+			color: #7a8583;
+			background: #dfe5df;
+			border: 1px dashed #aebbb4;
+			border-radius: 4px;
+			font-family: Arial, sans-serif;
+			font-size: 0.8rem;
+			letter-spacing: 0.12em;
+			text-transform: uppercase;
+		}
+
+		h1 {
+			margin: 22px 0 6px;
+			font-size: 1.7rem;
+			font-weight: 400;
+		}
+
+		.description {
+			margin: 0;
+			color: #7b8582;
+			font-family: Arial, sans-serif;
+			font-size: 0.88rem;
+		}
+
+		.record-image {
+			display: block;
+			width: 100%;
+			min-height: 300px;
+			flex: 1;
+			object-fit: cover;
+			background: #dfe5df;
+			border: 1px dashed #aebbb4;
+			border-radius: 4px;
+		}
+
+		.media-slot {
+			display: flex;
+			min-height: 0;
+			flex: 1;
+		}
+
+		.record-audio,
+		.record-text {
+			width: 100%;
+			min-height: 300px;
+			flex: 1;
+		}
+
+		.record-audio {
+			align-self: center;
+		}
+
+		.record-text {
+			margin: 0;
+			padding: 16px;
+			overflow: auto;
+			color: #455a54;
+			background: #dfe5df;
+			border: 1px dashed #aebbb4;
+			border-radius: 4px;
+			font: 0.8rem/1.5 "Courier New", Courier, monospace;
+			white-space: pre-wrap;
+		}
+
+		.load-error {
+			font-family: "Courier New", Courier, monospace;
+			white-space: pre-wrap;
+		}
+
+		button {
+			width: 100%;
+			margin-top: 22px;
+			padding: 13px 18px;
+			color: #fffdf8;
+			background: #455a54;
+			border: 0;
+			border-radius: 4px;
+			cursor: pointer;
+			font-family: Arial, sans-serif;
+			font-size: 0.9rem;
+		}
+
+		button:hover {
+			background: #30443e;
+		}
+	</style>
+</head>
+<body>
+	<main class="collection" id="collection"></main>
+	<script>
+		const showLoadError = () => {
+			document.body.className = 'load-error';
+			document.body.textContent = 'record.json did not load. Are you serving the folder?\nOpen http://localhost:8000';
+		};
+
+		const candidateUrls = (path) => {
+			const cleanPath = path.replace(/^\.\//, '').replace(/^\//, '');
+			const variants = new Set([
+				path,
+				`./${cleanPath}`,
+				`/${cleanPath}`,
+				`./decaying-record/${cleanPath}`,
+				`decaying-record/${cleanPath}`,
+				`../decaying-record/${cleanPath}`
+			]);
+			return [...variants];
+		};
+
+		const fetchFirstAvailable = async (paths) => {
+			for (const url of paths) {
+				try {
+					const response = await fetch(url);
+					if (response.ok) {
+						return response;
+					}
+				} catch (error) {
+					continue;
+				}
+			}
+			throw new Error('No matching fetch target found');
+		};
+
+		const assetPath = (filename, folder = 'media') => {
+			if (filename.includes('/')) {
+				return filename;
+			}
+			return candidateUrls(`${folder}/${filename}`);
+		};
+
+		const mediaElement = async (record) => {
+			const filename = record.image || '';
+			const extension = filename.split('.').pop().toLowerCase();
+			const mediaCandidates = assetPath(filename);
+			const source = mediaCandidates[0];
+			const fallbackCandidates = mediaCandidates.slice(1);
+
+			if (['jpg', 'jpeg', 'png', 'gif', 'webp'].includes(extension)) {
+				const image = document.createElement('img');
+				image.className = 'record-image';
+				image.alt = record.title;
+				try {
+					const response = await fetchFirstAvailable(mediaCandidates);
+					if (response.ok) {
+						image.src = response.url;
+					}
+				} catch (error) {
+					image.src = source;
+				}
+				image.addEventListener('error', () => {
+					for (const candidate of fallbackCandidates) {
+						if (candidate !== source) {
+							image.src = candidate;
+							return;
+						}
+					}
+				}, { once: true });
+				return image;
+			}
+
+			if (extension === 'mp3') {
+				const audio = document.createElement('audio');
+				audio.className = 'record-audio';
+				audio.controls = true;
+				try {
+					const response = await fetchFirstAvailable(mediaCandidates);
+					if (response.ok) {
+						audio.src = response.url;
+					}
+				} catch (error) {
+					audio.src = source;
+				}
+				audio.addEventListener('error', () => {
+					for (const candidate of fallbackCandidates) {
+						if (candidate !== source) {
+							audio.src = candidate;
+							return;
+						}
+					}
+				}, { once: true });
+				return audio;
+			}
+
+			if (extension === 'txt') {
+				const text = document.createElement('pre');
+				text.className = 'record-text';
+				try {
+					const response = await fetchFirstAvailable(mediaCandidates);
+					if (!response.ok) {
+						throw new Error('text record request failed');
+					}
+					text.textContent = await response.text();
+				} catch (error) {
+					text.textContent = '[Text record unavailable]';
+				}
+				return text;
+			}
+
+			const placeholder = document.createElement('div');
+			placeholder.className = 'image-placeholder';
+			placeholder.textContent = 'Unsupported record type';
+			return placeholder;
+		};
+
+		const createCard = async (record) => {
+			const scene = document.createElement('article');
+			scene.className = 'card-scene';
+			scene.innerHTML = `
+				<div class="card">
+					<section class="card-face card-front">
+						<div class="media-slot"></div>
+						<h1>${record.title}</h1>
+						<p class="description">${record.place}</p>
+						<button type="button">Archive this</button>
+					</section>
+					<section class="card-face card-back" aria-label="Archival specimen label">
+						<div class="specimen-label">
+							<p class="catalog-number">CAT. NO. ${record.catalog_id}</p>
+							<dl class="specimen-fields">
+								<dt>Title</dt><dd>${record.title}</dd>
+								<dt>Date and place</dt><dd>${record.date}; ${record.place}</dd>
+								<dt>Recorded by</dt><dd>${record.recorder}</dd>
+								<dt>What was not captured</dt><dd>${record.not_captured}</dd>
+							</dl>
+						</div>
+					</section>
+				</div>`;
+
+			const card = scene.querySelector('.card');
+			scene.querySelector('.media-slot').append(await mediaElement(record));
+			scene.querySelector('button').addEventListener('click', () => {
+				card.classList.add('is-flipped', 'is-decaying');
+			});
+			return scene;
+		};
+
+		const loadRecords = async () => {
+			try {
+				const response = await fetchFirstAvailable([
+					'records.json',
+					'./records.json',
+					'./decaying-record/records.json',
+					'decaying-record/records.json',
+					'record.json',
+					'./record.json',
+					'./decaying-record/record.json'
+				]);
+
+				const data = await response.json();
+				const records = Array.isArray(data) ? data : [data];
+				const collection = document.querySelector('#collection');
+				for (const record of records) {
+					collection.append(await createCard(record));
+				}
+			} catch (error) {
+				showLoadError();
+			}
+		};
+
+		loadRecords();
+	</script>
+</body>
+</html>
